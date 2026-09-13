@@ -47,7 +47,101 @@ import "../styles/global.css";
           </ul>
         </div>
       </section>
+
+      <section class="contact region" id="contact">
+        <div class="wrapper flow">
+          <h2>Офіси та контакти</h2>
+          <ul class="contact-list" role="list">
+            <li>
+              <article>
+                <h3 class="contact-card-title">Головний офіс</h3>
+                <p>Камʼянське, вул. Соборна, 7</p>
+                <p>Понеділок–пʼятниця, 9:00–16:00, без перерви</p>
+                <p>
+                  <a href="tel:+380961672845">+380 (96) 167 28 45</a>
+                </p>
+              </article>
+            </li>
+            <li>
+              <article>
+                <h3 class="contact-card-title">Пʼятихатський офіс</h3>
+                <p>Пʼятихатки, вул. Тиха, 117</p>
+                <p>Понеділок–пʼятниця, 8:00–17:00, перерва 12:00 – 13:00</p>
+                <p>
+                  <a href="tel:+380973239967">+380 (97) 323 99 67</a>
+                </p>
+              </article>
+            </li>
+            <li>
+              <article>
+                <h3 class="contact-card-title">Жовтоводський офіс</h3>
+                <p>Жовті Води, вул. Березнева, 40А</p>
+                <p>Понеділок–пʼятниця, 9:00–17:00, без перерви</p>
+                <p>
+                  <a href="tel:+380973239967">+380 (97) 323 99 67</a>
+                </p>
+              </article>
+            </li>
+            <li>
+              <article>
+                <h3 class="contact-card-title">Криничанський офіс</h3>
+                <p>Кринички, вул. Виконкомівська, 5</p>
+                <p>Понеділок–пʼятниця, 9:00–17:00, без перерви</p>
+                <p>
+                  <a href="tel:+380973239967">+380 (97) 323 99 67</a>
+                </p>
+              </article>
+            </li>
+            <li>
+              <article>
+                <h3 class="contact-card-title">Верхньодніпровський офіс</h3>
+                <p>Верхньодніпровськ, вул. Театральна, 16</p>
+                <p>Понеділок–пʼятниця, 9:00–17:00, без перерви</p>
+                <p>
+                  <a href="tel:+380973239967">+380 (97) 323 99 67</a>
+                </p>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
     <PageFooter />
   </body>
 </html>
+
+<style is:global>
+  .service-list {
+    counter-reset: service-counter;
+  }
+
+  .service-list li {
+    counter-increment: service-counter;
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+    padding-block: 1.5rem;
+    border-block-start: 1px solid;
+  }
+
+  .service-list li:last-child {
+    border-block-end: 1px solid;
+  }
+
+  .service-list li::before {
+    content: counter(service-counter, lower-roman);
+    color: hsl(0 90% 40%);
+  }
+
+  /**/
+
+  .contact-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+    gap: 1rem;
+  }
+
+  .contact-list article {
+    border: 1px solid;
+  }
+</style>

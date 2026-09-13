@@ -18,6 +18,11 @@
   --focus-ring-style: dashed;
   --focus-ring-color: currentColor;
   --focus-ring-offset: 4px;
+
+  --color-surface-primary: #f7f7f7;
+  --color-surface-secondary: #eee;
+  --color-text-primary: #111;
+  --color-text-secondary: #333;
 }
 
 html {
@@ -37,6 +42,8 @@ html {
 body {
   margin: 0;
   min-block-size: 100svb;
+  background-color: var(--color-surface-primary);
+  color: var(--color-text-primary);
   font-family: var(--font-primary);
   font-size: var(--font-size-m);
   font-size-adjust: from-font;
@@ -60,6 +67,7 @@ dl {
 h1,
 h2,
 h3 {
+  max-inline-size: 35ch;
   font-family: var(--font-secondary);
   font-weight: 800;
   letter-spacing: -0.02ch;
@@ -68,13 +76,7 @@ h3 {
 }
 
 h1 {
-  max-inline-size: 20ch;
   font-size: var(--font-size-3xl);
-}
-
-h2,
-h3 {
-  max-inline-size: 35ch;
 }
 
 h2 {
@@ -82,13 +84,13 @@ h2 {
 }
 
 h3 {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-l);
 }
 
 h4,
 h5,
 h6 {
-  font-size: var(--font-size-l);
+  font-size: var(--font-size-m);
 }
 
 p,
@@ -224,15 +226,15 @@ td {
 }
 
 .wrapper {
-  --wrapper-max: 48rem;
+  --wrapper-max: 64rem;
   --wrapper-gutter: clamp(1rem, 5vi, 2rem);
 
   margin-inline: auto;
   inline-size: min(var(--wrapper-max), 100% - (var(--wrapper-gutter) * 2));
 }
 
-.wrapper[data-width="wide"] {
-  --wrapper-max: 64rem;
+.wrapper[data-wrapper-size="wide"] {
+  --wrapper-max: 80rem;
 }
 
 .region {
