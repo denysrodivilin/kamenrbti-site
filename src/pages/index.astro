@@ -1,5 +1,7 @@
 ---
 import PageHeader from "../components/PageHeader.astro";
+import PageFooter from "../components/PageFooter.astro";
+import "../styles/global.css";
 ---
 
 <html lang="en">
@@ -13,6 +15,9 @@ import PageHeader from "../components/PageHeader.astro";
   </head>
   <body>
     <PageHeader />
-    <h1>Astro</h1>
+    <main id="main">
+      <h1>Astro</h1>
+    </main>
+    <PageFooter />
   </body>
 </html>

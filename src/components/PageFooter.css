@@ -1,0 +1,9 @@
+.page-footer {
+  background-color: #eee;
+  padding-block: 1.5rem;
+}
+
+.page-footer a {
+  color: currentColor;
+  text-decoration: none;
+}

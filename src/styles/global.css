@@ -1,0 +1,249 @@
+:root {
+  --font-primary: ui-sans-serif, system-ui, sans-serif;
+  --font-secondary: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+  --font-monospace: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+
+  --font-size-base: clamp(1em, 16px + 0.5vi, 1.25em);
+  --font-size-s: 0.875rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+
+  --line-height-s: 1.2;
+  --line-height-m: 1.6;
+
+  --focus-ring-width: medium;
+  --focus-ring-style: dashed;
+  --focus-ring-color: currentColor;
+  --focus-ring-offset: 4px;
+}
+
+html {
+  font-size: var(--font-size-base);
+  overflow-wrap: break-word;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+    &:focus-within {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+body {
+  margin: 0;
+  min-block-size: 100svb;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-m);
+  font-size-adjust: from-font;
+  line-height: var(--line-height-m);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+dl {
+  margin-block: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-secondary);
+  font-weight: 800;
+  letter-spacing: -0.02ch;
+  line-height: var(--line-height-s);
+  text-wrap: balance;
+}
+
+h1 {
+  max-inline-size: 20ch;
+  font-size: var(--font-size-3xl);
+}
+
+h2,
+h3 {
+  max-inline-size: 35ch;
+}
+
+h2 {
+  font-size: var(--font-size-2xl);
+}
+
+h3 {
+  font-size: var(--font-size-xl);
+}
+
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-l);
+}
+
+p,
+li,
+dd {
+  text-wrap: pretty;
+}
+
+ul,
+ol {
+  padding-inline-start: 2ch;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  padding-inline-start: 0;
+  list-style-type: none;
+}
+
+dd {
+  margin-inline-start: 2ch;
+}
+
+sub,
+sup {
+  line-height: 0;
+}
+
+code,
+kbd,
+samp {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  tab-size: 2;
+  box-decoration-break: clone;
+}
+
+@supports not (font-size-adjust: from-font) {
+  code,
+  kbd,
+  samp {
+    font-size: 0.95em;
+  }
+}
+
+a {
+  color: #d70916;
+  text-decoration-thickness: 0.2ex;
+  text-underline-offset: 0.2ex;
+
+  &:not(:is(:hover, :focus-visible)) {
+    text-decoration-color: color-mix(in srgb, currentColor, transparent 50%);
+  }
+}
+
+img,
+iframe,
+audio,
+video,
+canvas,
+svg {
+  display: block;
+  max-inline-size: 100%;
+}
+
+img,
+video,
+canvas,
+svg {
+  block-size: auto;
+}
+
+audio {
+  inline-size: 100%;
+}
+
+figure {
+  margin-inline: auto;
+  inline-size: fit-content;
+}
+
+figcaption {
+  contain: inline-size;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+input:not(:is([type="submit"], [type="checkbox"], [type="radio"], [type="button"], [type="reset"])),
+textarea {
+  box-sizing: border-box;
+  max-inline-size: 100%;
+  border: 2px solid;
+  padding: 0.25em 0.5em;
+}
+
+textarea {
+  min-block-size: 5lh;
+  resize: vertical;
+}
+
+table {
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums lining-nums slashed-zero;
+}
+
+th,
+td {
+  border: 1px solid;
+  padding: 0.25em 0.5em;
+  text-align: start;
+  vertical-align: top;
+}
+
+[role="region"][aria-labelledby][tabindex] {
+  overflow: auto;
+}
+
+:target {
+  scroll-margin: 3lh;
+}
+
+:focus-visible {
+  outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+[hidden]:not([hidden="until-found"]) {
+  display: none !important;
+}
+
+.wrapper {
+  --wrapper-max: 48rem;
+  --wrapper-gutter: clamp(1rem, 5vi, 2rem);
+
+  margin-inline: auto;
+  inline-size: min(var(--wrapper-max), 100% - (var(--wrapper-gutter) * 2));
+}
+
+.wrapper[data-width="wide"] {
+  --wrapper-max: 64rem;
+}
+
+.region {
+  --region-space: 6rem;
+  padding-block: var(--region-space);
+}
+
+.region + .region {
+  padding-block-start: 0;
+}
+
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
