@@ -1,12 +1,8 @@
----
-import "./PageHeader.css";
----
-
 <header class="page-header">
   <div class="wrapper" data-width="wide">
     <a href="/">Камʼянське районне БТІ</a>
     <nav aria-label="Головне меню">
-      <ul>
+      <ul role="list">
         <li>
           <a href="#service">Послуги</a>
         </li>
@@ -23,3 +19,37 @@ import "./PageHeader.css";
     </nav>
   </div>
 </header>
+
+<style is:global>
+  .page-header {
+    background-color: #eee;
+    padding-block: 1.5rem;
+  }
+
+  .page-header .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  @media (width > 64rem) {
+    .page-header .wrapper {
+      flex-direction: row;
+    }
+  }
+
+  .page-header a {
+    color: currentColor;
+    text-decoration: none;
+  }
+
+  .page-header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
+  }
+</style>

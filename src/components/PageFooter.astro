@@ -1,6 +1,4 @@
 ---
-import "./PageFooter.css";
-
 const year = new Date().getFullYear();
 ---
 
@@ -10,3 +8,15 @@ const year = new Date().getFullYear();
     <a href="mailto:kamenrbti@gmail.com">kamenrbti@gmail.com</a>
   </div>
 </footer>
+
+<style is:global>
+  .page-footer {
+    background-color: #eee;
+    padding-block: 1.5rem;
+  }
+
+  .page-footer a {
+    color: currentColor;
+    text-decoration: none;
+  }
+</style>

@@ -4,19 +4,27 @@ import PageFooter from "../components/PageFooter.astro";
 import "../styles/global.css";
 ---
 
-<html lang="en">
+<html lang="uk">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Камʼянське районне БТІ | Офіційний сайт</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
   </head>
   <body>
     <PageHeader />
     <main id="main">
-      <h1>Astro</h1>
+      <section class="hero region">
+        <div class="wrapper">
+          <h1>Допомога з документами на нерухомість з 1996 року</h1>
+          <p>Працюємо з приватними клієнтами, бізнесом, державними та комунальними установами.</p>
+          <a class="cta" href="#contact">
+            Замовити документи
+          </a>
+        </div>
+      </section>
     </main>
     <PageFooter />
   </body>
