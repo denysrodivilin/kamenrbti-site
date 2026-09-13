@@ -3,7 +3,7 @@
   --font-secondary: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
   --font-monospace: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
 
-  --font-size-base: clamp(1em, 16px + 0.5vi, 1.25em);
+  --font-size-base: clamp(1rem, 1rem + 0.5vi, 1.25rem);
   --font-size-s: 0.875rem;
   --font-size-m: 1rem;
   --font-size-l: 1.25rem;

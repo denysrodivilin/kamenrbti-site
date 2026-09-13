@@ -4,7 +4,8 @@ const year = new Date().getFullYear();
 
 <footer class="page-footer">
   <div class="wrapper" data-width="wide">
-    <p>&copy; 1996–{year} Камʼянське РБТІ. Код ЄДРПОУ 03341859</p>
+    <p>&copy; 1993–{year} КП «„Камʼянське РБТІ“ ДОР». Код ЄДРПОУ 03341859.</p>
+    <p>вул. Соборна, 7, м. Камʼянське, Камʼянський р-н, Дніпропетровська обл., 51925</p>
     <a href="mailto:kamenrbti@gmail.com">kamenrbti@gmail.com</a>
   </div>
 </footer>
@@ -12,7 +13,13 @@ const year = new Date().getFullYear();
 <style is:global>
   .page-footer {
     background-color: #eee;
-    padding-block: 1.5rem;
+    padding-block: 3rem;
+  }
+
+  .page-footer .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .page-footer a {
